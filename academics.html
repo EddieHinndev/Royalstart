@@ -1,0 +1,975 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academics | RoyalStart Academy</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background: #fff;
+            line-height: 1.7;
+        }
+
+        :root {
+            --maroon: #641b32;
+            --navy: #17263e;
+            --gold: #c9a45c;
+            --light: #f8f7f6;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.07);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 12px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .school-logo {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .brand h2 {
+            color: var(--maroon);
+            font-size: 19px;
+            font-weight: 800;
+        }
+
+        .brand span {
+            color: var(--navy);
+            font-size: 10px;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--maroon);
+        }
+
+        .nav-links .contact-btn {
+            background: var(--maroon);
+            color: white;
+            padding: 11px 20px;
+            border-radius: 5px;
+        }
+
+        .nav-links .contact-btn:hover {
+            background: var(--navy);
+            color: white;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: var(--maroon);
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .page-hero {
+            background:
+                linear-gradient(rgba(23,38,62,0.87), rgba(100,27,50,0.85)),
+                url('images/school-welcome.jpg') center/cover no-repeat;
+
+            min-height: 330px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .page-hero h1 {
+            font-size: 43px;
+            margin-bottom: 10px;
+        }
+
+        .page-hero span {
+            color: var(--gold);
+        }
+
+        .page-hero p {
+            font-size: 14px;
+            color: #eee;
+        }
+
+        /* GENERAL */
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 75px 25px;
+        }
+
+        .section-label {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-heading {
+            color: var(--maroon);
+            font-size: 30px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .section-description {
+            color: #777;
+            font-size: 13px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        /* INTRO */
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .intro-text p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 17px;
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: 370px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        /* LEARNING LEVELS */
+
+        .levels-section {
+            background: var(--light);
+        }
+
+        .center-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .level-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px 25px;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .level-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.09);
+        }
+
+        .level-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f7edf0;
+            border-radius: 10px;
+            color: var(--maroon);
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        .level-card h3 {
+            color: var(--navy);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .level-card p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* DIGITAL LEARNING */
+
+        .digital-section {
+            background: var(--navy);
+            color: white;
+        }
+
+        .digital-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .digital-image img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .digital-text .section-heading {
+            color: white;
+        }
+
+        .digital-text p {
+            color: #d1d8e1;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .digital-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .digital-list li {
+            margin-bottom: 13px;
+            font-size: 13px;
+            color: white;
+        }
+
+        .digital-list i {
+            color: var(--gold);
+            margin-right: 10px;
+        }
+
+        .digital-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 9px 15px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        /* OUR APPROACH */
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .approach-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 10px;
+        }
+
+        .approach-card i {
+            font-size: 32px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .approach-card h3 {
+            color: var(--maroon);
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .approach-card p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: var(--maroon);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            font-size: 13px;
+            color: #f1e8e8;
+            margin-bottom: 25px;
+        }
+
+        .cta a {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .cta a:hover {
+            background: white;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #101b2c;
+            color: white;
+            padding: 50px 25px 20px;
+        }
+
+        .footer-content {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-content h3 {
+            margin-bottom: 17px;
+            font-size: 17px;
+        }
+
+        .footer-content p,
+        .footer-content a {
+            color: #c5cbd4;
+            font-size: 12px;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-content a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            max-width: 1150px;
+            margin: 35px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            text-align: center;
+            color: #aeb7c4;
+            font-size: 11px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 768px) {
+
+            .navbar {
+                padding: 10px 18px;
+            }
+
+            .school-logo {
+                width: 48px;
+                height: 48px;
+            }
+
+            .brand h2 {
+                font-size: 15px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 25px;
+                gap: 22px;
+                box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .page-hero {
+                min-height: 250px;
+            }
+
+            .page-hero h1 {
+                font-size: 32px;
+            }
+
+            .intro-grid,
+            .digital-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .intro-image img,
+            .digital-image img {
+                height: 280px;
+            }
+
+            .levels-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                font-size: 25px;
+            }
+
+            .container {
+                padding: 55px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .cta h2 {
+                font-size: 23px;
+            }
+        }
+
+        @media(max-width: 480px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo-area">
+
+            <img src="images/logo.png"
+                 alt="RoyalStart Academy Logo"
+                 class="school-logo">
+
+            <div class="brand">
+                <h2>ROYALSTART ACADEMY</h2>
+                <span>LEARN • GROW • EXCEL</span>
+            </div>
+
+        </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="academics.html" class="active">Academics</a>
+            <a href="contact.html" class="contact-btn">Contact Us</a>
+        </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+    </nav>
+</header>
+
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+    <div>
+        <h1>Our <span>Academics</span></h1>
+
+        <p>
+            Inspiring young minds through quality education,
+            creativity and discovery.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- INTRODUCTION -->
+
+<section class="container">
+
+    <div class="intro-grid">
+
+        <div class="intro-text">
+
+            <div class="section-label">EDUCATION AT ROYALSTART</div>
+
+            <h2 class="section-heading">
+                Preparing Learners for a Brighter Tomorrow
+            </h2>
+
+            <p>
+                At RoyalStart Academy, we believe that every child
+                deserves an opportunity to learn, grow and succeed.
+                Our academic programme is designed to nurture
+                curiosity, build knowledge and develop confidence.
+            </p>
+
+            <p>
+                We provide learning opportunities from early childhood
+                through primary school, supporting learners at every
+                stage of their educational journey.
+            </p>
+
+            <p>
+                Our goal is to develop well-rounded learners who are
+                academically capable, creative, responsible and ready
+                to face the opportunities of the future.
+            </p>
+
+        </div>
+
+        <div class="intro-image">
+
+            <img src="images/school-welcome.jpg"
+                 alt="RoyalStart Academy learning environment">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LEARNING LEVELS -->
+
+<section class="levels-section">
+
+    <div class="container">
+
+        <div class="center-heading">
+
+            <div class="section-label">OUR LEARNING PROGRAMMES</div>
+
+            <h2 class="section-heading">Learning Levels</h2>
+
+            <p class="section-description">
+                We welcome learners at different stages of development,
+                providing a supportive foundation for lifelong learning.
+            </p>
+
+        </div>
+
+        <div class="levels-grid">
+
+            <div class="level-card">
+
+                <div class="level-icon">
+                    <i class="fas fa-baby"></i>
+                </div>
+
+                <h3>Playgroup</h3>
+
+                <p>
+                    A warm introduction to learning through play,
+                    exploration, interaction and early development.
+                </p>
+
+            </div>
+
+
+            <div class="level-card">
+
+                <div class="level-icon">
+                    <i class="fas fa-shapes"></i>
+                </div>
+
+                <h3>PP1</h3>
+
+                <p>
+                    Building early communication, social interaction,
+                    creativity and foundational learning skills.
+                </p>
+
+            </div>
+
+
+            <div class="level-card">
+
+                <div class="level-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+
+                <h3>PP2</h3>
+
+                <p>
+                    Strengthening early literacy, numeracy,
+                    confidence and readiness for Grade 1.
+                </p>
+
+            </div>
+
+
+            <div class="level-card">
+
+                <div class="level-icon">
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+
+                <h3>Lower Primary</h3>
+
+                <p>
+                    Grades 1–3. Developing essential literacy,
+                    numeracy, communication and problem-solving skills.
+                </p>
+
+            </div>
+
+
+            <div class="level-card">
+
+                <div class="level-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+
+                <h3>Upper Primary</h3>
+
+                <p>
+                    Grades 4–6. Expanding knowledge, independent
+                    thinking, creativity and academic confidence.
+                </p>
+
+            </div>
+
+
+            <div class="level-card">
+
+                <div class="level-icon">
+                    <i class="fas fa-school"></i>
+                </div>
+
+                <h3>Junior School</h3>
+
+                <p>
+                    Grades 7–9. Encouraging deeper understanding,
+                    practical skills and preparation for future pathways.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DIGITAL LEARNING -->
+
+<section class="digital-section">
+
+    <div class="container">
+
+        <div class="digital-grid">
+
+            <div class="digital-image">
+
+                <img src="images/royalstart-playground.png"
+                     alt="RoyalStart Academy pupils">
+
+            </div>
+
+            <div class="digital-text">
+
+                <div class="section-label">EDUCATION FOR THE FUTURE</div>
+
+                <h2 class="section-heading">
+                    Digital Skills & Computer Education
+                </h2>
+
+                <p>
+                    We believe learners should be prepared for a world
+                    where technology and innovation play an important role.
+                </p>
+
+                <p>
+                    RoyalStart Academy offers computer and coding learning
+                    opportunities to learners in Grades 1–9 at no extra
+                    tuition charge.
+                </p>
+
+                <ul class="digital-list">
+
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Introduction to computer skills
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Basic digital literacy
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Introduction to coding concepts
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Creative and logical thinking
+                    </li>
+
+                </ul>
+
+                <span class="digital-badge">
+                    FREE COMPUTER & CODING LESSONS
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OUR APPROACH -->
+
+<section class="container">
+
+    <div class="center-heading">
+
+        <div class="section-label">HOW WE DEVELOP LEARNERS</div>
+
+        <h2 class="section-heading">Beyond the Classroom</h2>
+
+        <p class="section-description">
+            We encourage learners to develop skills and qualities
+            that support their growth in school and in everyday life.
+        </p>
+
+    </div>
+
+    <div class="approach-grid">
+
+        <div class="approach-card">
+
+            <i class="fas fa-brain"></i>
+
+            <h3>Critical Thinking</h3>
+
+            <p>
+                Encouraging learners to ask questions, explore ideas
+                and find solutions to challenges.
+            </p>
+
+        </div>
+
+
+        <div class="approach-card">
+
+            <i class="fas fa-users"></i>
+
+            <h3>Teamwork</h3>
+
+            <p>
+                Building cooperation, communication, friendship
+                and respect for others.
+            </p>
+
+        </div>
+
+
+        <div class="approach-card">
+
+            <i class="fas fa-palette"></i>
+
+            <h3>Creativity</h3>
+
+            <p>
+                Giving learners opportunities to discover their
+                talents and express their ideas.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+
+<section class="cta">
+
+    <h2>Your Child's Future Starts Here</h2>
+
+    <p>
+        Give your child the opportunity to learn, grow and excel
+        at RoyalStart Academy.
+    </p>
+
+    <a href="contact.html">
+        Enquire About Admission
+        <i class="fas fa-arrow-right"></i>
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>ROYALSTART ACADEMY</h3>
+
+            <p>
+                Nothing But The Best. We are committed to nurturing
+                confident, creative and responsible learners through
+                quality education.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="academics.html">Academics</a>
+            <a href="contact.html">Contact Us</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Contact Information</h3>
+
+            <p>
+                <i class="fas fa-phone"></i>
+                +254 729 043 916
+            </p>
+
+            <p>
+                <i class="fas fa-envelope"></i>
+                royalstartacademy@gmail.com
+            </p>
+
+            <p>
+                <i class="fas fa-map-marker-alt"></i>
+                Kayole, Nairobi, Kenya
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 RoyalStart Academy. All Rights Reserved.
+
+        <br>
+
+        Nothing But The Best.
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("show");
+    }
+
+</script>
+
+</body>
+</html>
