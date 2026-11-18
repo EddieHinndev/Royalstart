@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="RoyalStart Academy in Kayole, Nairobi — nurturing confident, creative and responsible learners.">
+    <meta name="description" content="RoyalStart Academy in Kayole, Nairobi. We nurture confident, creative and responsible learners through quality education.">
+
+    <meta name="theme-color" content="#641b32">
 
     <title>RoyalStart Academy | Learn • Grow • Excel</title>
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- FONT AWESOME -->
@@ -23,7 +26,7 @@
             --maroon: #641b32;
             --navy: #17263e;
             --gold: #c9a45c;
-            --white: #fff;
+            --white: #ffffff;
             --light: #f8f7f6;
             --text: #5b6068;
         }
@@ -36,16 +39,22 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 90px;
         }
 
         body {
             font-family: "Poppins", sans-serif;
             color: var(--navy);
             background: var(--white);
+            overflow-x: hidden;
         }
 
         a {
             text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
         }
 
         /* NAVIGATION */
@@ -55,12 +64,12 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 8%;
+            padding: 10px 8%;
             background: var(--white);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,.05);
+            box-shadow: 0 2px 15px rgba(0,0,0,.06);
         }
 
         .logo {
@@ -68,8 +77,6 @@
             align-items: center;
             gap: 12px;
         }
-
-        /* SCHOOL LOGO IMAGE */
 
         .school-logo {
             width: 58px;
@@ -141,11 +148,11 @@
             background:
                 linear-gradient(
                     90deg,
-                    rgba(15,25,42,.86) 0%,
-                    rgba(15,25,42,.62) 52%,
-                    rgba(15,25,42,.20) 100%
+                    rgba(15,25,42,.88) 0%,
+                    rgba(15,25,42,.65) 55%,
+                    rgba(15,25,42,.25) 100%
                 ),
-                url("images/school-welcome.jpg") center 42% / cover no-repeat;
+                url("./images/school-welcome.jpg") center 42% / cover no-repeat;
         }
 
         .hero-content {
@@ -266,7 +273,7 @@
             margin-left: 7px;
         }
 
-        /* SCHOOL HIGHLIGHTS */
+        /* HIGHLIGHTS */
 
         .highlights {
             padding: 82px 8%;
@@ -361,6 +368,10 @@
             color: var(--navy);
         }
 
+        .admissions .btn:hover {
+            background: white;
+        }
+
         /* FOOTER */
 
         footer {
@@ -405,7 +416,7 @@
         @media (max-width: 850px) {
 
             .navbar {
-                padding: 0 5%;
+                padding: 10px 5%;
             }
 
             .menu-toggle {
@@ -415,7 +426,7 @@
             .nav-links {
                 display: none;
                 position: absolute;
-                top: 84px;
+                top: 100%;
                 left: 0;
                 width: 100%;
                 padding: 24px;
@@ -468,6 +479,10 @@
                 height: 48px;
             }
 
+            .hero {
+                min-height: 540px;
+            }
+
             .hero h1 {
                 font-size: 38px;
             }
@@ -502,14 +517,16 @@
 
         <a href="index.html" class="logo" aria-label="RoyalStart Academy home">
 
-            <!-- ADD YOUR SCHOOL LOGO HERE -->
-           <img src="./images/logo.jpg.png"
-     alt="RoyalStart Academy Logo"
-     class="school-logo">
+            <img
+                src="./images/logo.jpg.png"
+                alt="RoyalStart Academy Logo"
+                class="school-logo"
+                onerror="this.style.display='none'"
+            >
 
             <div class="logo-text">
                 <h2>RoyalStart Academy</h2>
-                <span>Nothing But The Best</span>
+                <span>NOTHING BUT THE BEST</span>
             </div>
 
         </a>
@@ -526,10 +543,13 @@
 
         </nav>
 
-        <button class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false">
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navLinks"
+        >
 
             <i class="fa-solid fa-bars"></i>
 
@@ -584,8 +604,11 @@
 
             <div class="welcome-image">
 
-              <img src="./images/school-welcome.jpg"
-     alt="Learners of RoyalStart Academy in their school uniforms">
+                <img
+                    src="./images/school-welcome.jpg"
+                    alt="Learners of RoyalStart Academy in their school uniforms"
+                    loading="lazy"
+                >
 
             </div>
 
@@ -788,11 +811,16 @@
 
         const navLinks = document.getElementById("navLinks");
 
-        menuToggle.addEventListener("click", () => {
+        menuToggle.addEventListener("click", function() {
 
             const isOpen = navLinks.classList.toggle("show");
 
             menuToggle.setAttribute("aria-expanded", isOpen);
+
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
 
             menuToggle.innerHTML = isOpen
                 ? '<i class="fa-solid fa-xmark"></i>'
@@ -800,7 +828,24 @@
 
         });
 
+        // Close mobile menu after clicking a link
+
+        document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                navLinks.classList.remove("show");
+
+                menuToggle.setAttribute("aria-expanded", "false");
+
+                menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+
+            });
+
+        });
+
     </script>
 
 </body>
 </html>
+
