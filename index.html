@@ -5,22 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="RoyalStart Academy in Kayole, Nairobi — nurturing confident, creative and responsible learners.">
-
-    <meta name="theme-color" content="#641b32">
-
     <title>RoyalStart Academy | Learn • Grow • Excel</title>
 
-    <!-- GOOGLE SEARCH FAVICON -->
-    <link rel="icon" type="image/png" href="./logo.png">
-    <link rel="apple-touch-icon" href="./logo.png">
+    <meta name="description" content="RoyalStart Academy in Kayole, Nairobi. Nurturing confident, creative and responsible learners through quality education.">
+    <meta name="theme-color" content="#641b32">
 
-    <!-- GOOGLE FONTS -->
+    <!-- GOOGLE FAVICON -->
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
+
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- FONT AWESOME -->
+    <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
@@ -64,14 +63,14 @@
             margin: auto;
         }
 
-        /* NAVIGATION */
+        /* HEADER */
 
         header {
-            background: var(--white);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            background: white;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,.08);
         }
 
         .navbar {
@@ -101,26 +100,25 @@
 
         .logo-text span {
             color: var(--navy);
-            font-size: 11px;
-            letter-spacing: 2px;
+            font-size: 10px;
             font-weight: 600;
+            letter-spacing: 2px;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 27px;
         }
 
         .nav-links a {
             color: var(--navy);
             font-size: 13px;
             font-weight: 600;
-            transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--maroon);
+            color: var(--gold);
         }
 
         .nav-links .contact-btn {
@@ -132,23 +130,27 @@
 
         .menu-toggle {
             display: none;
-            font-size: 25px;
-            color: var(--maroon);
-            cursor: pointer;
             background: none;
             border: none;
+            color: var(--maroon);
+            font-size: 25px;
+            cursor: pointer;
         }
 
-        /* HERO SECTION */
+        /* HERO */
 
         .hero {
             min-height: 590px;
             display: flex;
             align-items: center;
             color: white;
-            background:
-                linear-gradient(rgba(23,38,62,0.78), rgba(100,27,50,0.75)),
-                url("./school-welcome.jpg") center/cover no-repeat;
+            background-color: var(--navy);
+            background-image:
+                linear-gradient(rgba(23,38,62,.78), rgba(100,27,50,.75)),
+                url("/school-welcome.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         .hero-content {
@@ -156,36 +158,40 @@
             padding: 90px 0;
         }
 
-        .hero-content .small-heading {
+        .small-heading {
             color: var(--gold);
+            font-size: 13px;
             font-weight: 700;
             letter-spacing: 3px;
-            font-size: 13px;
             margin-bottom: 15px;
         }
 
         .hero h1 {
             font-size: clamp(35px, 5vw, 58px);
             line-height: 1.2;
-            margin-bottom: 22px;
             font-weight: 800;
+            margin-bottom: 22px;
         }
 
         .hero p {
-            font-size: 16px;
+            font-size: 15px;
             max-width: 620px;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
             color: #f1eeee;
         }
 
         .btn {
             display: inline-block;
-            padding: 13px 25px;
+            padding: 13px 24px;
             border-radius: 5px;
             font-size: 13px;
             font-weight: 700;
-            transition: 0.3s;
             margin: 5px 8px 5px 0;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
         }
 
         .btn-gold {
@@ -198,11 +204,7 @@
             color: white;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-        }
-
-        /* SECTION GENERAL */
+        /* GENERAL SECTIONS */
 
         section {
             padding: 80px 0;
@@ -222,7 +224,7 @@
 
         .section-heading h2 {
             color: var(--maroon);
-            font-size: 31px;
+            font-size: 30px;
             margin-top: 8px;
         }
 
@@ -233,7 +235,7 @@
             font-size: 14px;
         }
 
-        /* WELCOME SECTION */
+        /* WELCOME */
 
         .welcome {
             background: var(--light);
@@ -251,7 +253,6 @@
             height: 390px;
             object-fit: cover;
             border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
         .welcome-text h2 {
@@ -269,14 +270,9 @@
         .welcome-text .btn {
             background: var(--maroon);
             color: white;
-            margin-top: 10px;
         }
 
         /* HIGHLIGHTS */
-
-        .highlights {
-            background: white;
-        }
 
         .highlight-grid {
             display: grid;
@@ -287,15 +283,15 @@
         .highlight-card {
             background: var(--light);
             padding: 30px 25px;
-            border-radius: 8px;
             text-align: center;
+            border-radius: 8px;
             border-bottom: 4px solid var(--gold);
-            transition: 0.3s;
+            transition: .3s;
         }
 
         .highlight-card:hover {
             transform: translateY(-7px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 25px rgba(0,0,0,.08);
         }
 
         .highlight-card i {
@@ -311,11 +307,11 @@
         }
 
         .highlight-card p {
-            font-size: 13px;
             color: #666;
+            font-size: 13px;
         }
 
-        /* PLAYGROUND */
+        /* SCHOOL LIFE */
 
         .school-life {
             background: var(--navy);
@@ -363,8 +359,8 @@
         .admissions p {
             max-width: 700px;
             margin: 0 auto 25px;
-            font-size: 14px;
             color: #555;
+            font-size: 14px;
         }
 
         .admissions .btn {
@@ -425,16 +421,17 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.15);
+            border-top: 1px solid rgba(255,255,255,.15);
             padding-top: 20px;
             text-align: center;
             font-size: 12px;
             color: #bfc4ce;
         }
 
-        /* MOBILE */
+        /* RESPONSIVE DESIGN */
 
         @media(max-width: 850px) {
+
             .menu-toggle {
                 display: block;
             }
@@ -450,7 +447,7 @@
                 align-items: stretch;
                 gap: 0;
                 padding: 15px 5%;
-                box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+                box-shadow: 0 8px 15px rgba(0,0,0,.08);
             }
 
             .nav-links.active {
@@ -479,13 +476,10 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
-
-            .hero {
-                min-height: 520px;
-            }
         }
 
         @media(max-width: 550px) {
+
             .logo-area img {
                 width: 52px;
                 height: 52px;
@@ -508,6 +502,10 @@
                 padding: 60px 0;
             }
 
+            .hero {
+                min-height: 520px;
+            }
+
             .hero-content {
                 padding: 70px 0;
             }
@@ -526,14 +524,16 @@
 
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- HEADER -->
     <header>
         <div class="container navbar">
 
-            <a href="./index.html" class="logo-area">
-                <img src="./logo.png"
-                     alt="RoyalStart Academy Logo"
-                     onerror="this.onerror=null;this.src='./logo.jpg.png';">
+            <a href="/" class="logo-area">
+                <img
+                    src="/logo.png"
+                    alt="RoyalStart Academy Logo"
+                    onerror="this.onerror=null;this.src='/logo.jpg.png';"
+                >
 
                 <div class="logo-text">
                     <h2>RoyalStart Academy</h2>
@@ -542,17 +542,17 @@
             </a>
 
             <button class="menu-toggle" id="menuToggle"
-                    aria-label="Open navigation menu"
-                    aria-expanded="false">
+                aria-label="Open navigation menu"
+                aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
 
             <nav class="nav-links" id="navLinks">
-                <a href="./index.html">Home</a>
-                <a href="./about.html">About Us</a>
-                <a href="./academics.html">Academics</a>
-                <a href="./contact.html">Contact Us</a>
-                <a href="./contact.html" class="contact-btn">Admissions</a>
+                <a href="/">Home</a>
+                <a href="/about.html">About Us</a>
+                <a href="/academics.html">Academics</a>
+                <a href="/contact.html">Contact Us</a>
+                <a href="/contact.html" class="contact-btn">Admissions</a>
             </nav>
 
         </div>
@@ -563,21 +563,24 @@
         <div class="container">
             <div class="hero-content">
 
-                <div class="small-heading">WELCOME TO ROYALSTART ACADEMY</div>
+                <div class="small-heading">
+                    WELCOME TO ROYALSTART ACADEMY
+                </div>
 
                 <h1>Building Bright Futures Through Quality Education</h1>
 
                 <p>
-                    At RoyalStart Academy, we nurture confident, creative
-                    and responsible learners through quality education,
-                    guidance and a supportive learning environment.
+                    At RoyalStart Academy, we nurture confident,
+                    creative and responsible learners through
+                    quality education, guidance and a supportive
+                    learning environment.
                 </p>
 
-                <a href="./about.html" class="btn btn-gold">
+                <a href="/about.html" class="btn btn-gold">
                     Discover Our School
                 </a>
 
-                <a href="./contact.html" class="btn btn-outline">
+                <a href="/contact.html" class="btn btn-outline">
                     Enquire About Admission
                 </a>
 
@@ -592,14 +595,18 @@
             <div class="welcome-grid">
 
                 <div class="welcome-image">
-                    <img src="./school-welcome.jpg"
-                         alt="Welcome to RoyalStart Academy"
-                         loading="lazy">
+                    <img
+                        src="/school-welcome.jpg"
+                        alt="RoyalStart Academy"
+                        loading="lazy"
+                        onerror="this.onerror=null;this.src='/royalstartplayground.png';"
+                    >
                 </div>
 
                 <div class="welcome-text">
 
-                    <div class="section-heading" style="text-align:left;margin-bottom:15px;">
+                    <div class="section-heading"
+                        style="text-align:left;margin-bottom:15px;">
                         <span>WHO WE ARE</span>
                     </div>
 
@@ -615,8 +622,8 @@
                     <p>
                         We believe that every child has unique abilities.
                         Our approach focuses on academic excellence,
-                        creativity, discipline and the development of
-                        important life skills.
+                        creativity, discipline and the development
+                        of important life skills.
                     </p>
 
                     <p>
@@ -624,26 +631,26 @@
                         to prepare learners for a brighter future.
                     </p>
 
-                    <a href="./about.html" class="btn">
+                    <a href="/about.html" class="btn">
                         Learn More About Us
                     </a>
 
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- HIGHLIGHTS -->
-    <section class="highlights">
+    <section>
         <div class="container">
 
             <div class="section-heading">
                 <span>WHY CHOOSE US</span>
                 <h2>Growing Together, Achieving More</h2>
                 <p>
-                    We provide an environment that encourages learners
-                    to discover their potential and achieve their goals.
+                    We provide an environment that encourages
+                    learners to discover their potential and
+                    achieve their goals.
                 </p>
             </div>
 
@@ -653,8 +660,8 @@
                     <i class="fas fa-graduation-cap"></i>
                     <h3>Quality Education</h3>
                     <p>
-                        Supporting learners through effective teaching
-                        and a strong academic foundation.
+                        Supporting learners through effective
+                        teaching and a strong academic foundation.
                     </p>
                 </div>
 
@@ -662,8 +669,8 @@
                     <i class="fas fa-laptop-code"></i>
                     <h3>Computer & Coding</h3>
                     <p>
-                        Encouraging digital skills, creativity and
-                        technology awareness.
+                        Encouraging digital skills, creativity
+                        and technology awareness.
                     </p>
                 </div>
 
@@ -671,8 +678,8 @@
                     <i class="fas fa-heart"></i>
                     <h3>Supportive Environment</h3>
                     <p>
-                        Creating a welcoming environment where learners
-                        feel valued and encouraged.
+                        Creating a welcoming environment where
+                        learners feel valued and encouraged.
                     </p>
                 </div>
 
@@ -714,7 +721,8 @@
             <div class="school-life-grid">
 
                 <div>
-                    <div class="section-heading" style="text-align:left;margin-bottom:15px;">
+                    <div class="section-heading"
+                        style="text-align:left;margin-bottom:15px;">
                         <span>OUR LEARNING ENVIRONMENT</span>
                     </div>
 
@@ -732,15 +740,18 @@
                         in school and in life.
                     </p>
 
-                    <a href="./academics.html" class="btn btn-gold">
+                    <a href="/academics.html" class="btn btn-gold">
                         Explore Academics
                     </a>
                 </div>
 
                 <div>
-                    <img src="./royalstartplayground.png"
-                         alt="RoyalStart Academy school playground"
-                         loading="lazy">
+                    <img
+                        src="/royalstartplayground.png"
+                        alt="RoyalStart Academy playground"
+                        loading="lazy"
+                        onerror="this.onerror=null;this.src='/school-welcome.jpg';"
+                    >
                 </div>
 
             </div>
@@ -763,7 +774,7 @@
                 our school community.
             </p>
 
-            <a href="./contact.html" class="btn">
+            <a href="/contact.html" class="btn">
                 Contact Us Today
             </a>
 
@@ -778,9 +789,12 @@
 
                 <div>
                     <div class="footer-logo">
-                        <img src="./logo.png"
-                             alt="RoyalStart Academy Logo"
-                             onerror="this.onerror=null;this.src='./logo.jpg.png';">
+
+                        <img
+                            src="/logo.png"
+                            alt="RoyalStart Academy Logo"
+                            onerror="this.onerror=null;this.src='/logo.jpg.png';"
+                        >
 
                         <h3>RoyalStart Academy</h3>
                     </div>
@@ -795,10 +809,10 @@
                 <div>
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./about.html">About Us</a></li>
-                        <li><a href="./academics.html">Academics</a></li>
-                        <li><a href="./contact.html">Contact Us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/academics.html">Academics</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -824,8 +838,8 @@
             </div>
 
             <div class="footer-bottom">
-                &copy; <span id="year"></span> RoyalStart Academy.
-                All Rights Reserved.
+                &copy; <span id="year"></span>
+                RoyalStart Academy. All Rights Reserved.
             </div>
 
         </div>
@@ -837,6 +851,7 @@
         const navLinks = document.getElementById("navLinks");
 
         menuToggle.addEventListener("click", function () {
+
             navLinks.classList.toggle("active");
 
             const isOpen = navLinks.classList.contains("active");
@@ -849,11 +864,16 @@
         });
 
         document.querySelectorAll(".nav-links a").forEach(link => {
+
             link.addEventListener("click", function () {
+
                 navLinks.classList.remove("active");
+
                 menuToggle.setAttribute("aria-expanded", "false");
+
                 menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
             });
+
         });
 
         document.getElementById("year").textContent =
