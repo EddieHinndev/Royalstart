@@ -5,36 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="RoyalStart Academy in Kayole, Nairobi. We nurture confident, creative and responsible learners through quality education.">
+    <meta name="description" content="RoyalStart Academy in Kayole, Nairobi — nurturing confident, creative and responsible learners.">
 
     <meta name="theme-color" content="#641b32">
 
     <title>RoyalStart Academy | Learn • Grow • Excel</title>
 
     <!-- GOOGLE SEARCH FAVICON -->
-    <link rel="icon" type="image/png" sizes="500x500" href="/logo.png">
-
-    <!-- APPLE DEVICE ICON -->
-    <link rel="apple-touch-icon" href="/logo.png">
+    <link rel="icon" type="image/png" href="./logo.png">
+    <link rel="apple-touch-icon" href="./logo.png">
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-
         :root {
             --maroon: #641b32;
             --navy: #17263e;
             --gold: #c9a45c;
             --white: #ffffff;
-            --light: #f8f7f6;
-            --text: #5b6068;
+            --light: #f7f5f3;
+            --dark: #252525;
         }
 
         * {
@@ -45,14 +41,12 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 90px;
         }
 
         body {
-            font-family: "Poppins", sans-serif;
-            color: var(--navy);
-            background: var(--white);
-            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
         }
 
         a {
@@ -61,83 +55,85 @@
 
         img {
             max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
         }
 
         /* NAVIGATION */
 
-        .navbar {
-            min-height: 84px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 8%;
+        header {
             background: var(--white);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,.06);
         }
 
-        .logo {
+        .navbar {
+            min-height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-area {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .school-logo {
-            width: 58px;
-            height: 58px;
+        .logo-area img {
+            width: 65px;
+            height: 65px;
             object-fit: contain;
-            display: block;
         }
 
         .logo-text h2 {
             color: var(--maroon);
-            font-size: 17px;
-            line-height: 1.35;
+            font-size: 19px;
+            line-height: 1.3;
         }
 
         .logo-text span {
-            color: var(--gold);
-            font-size: 9px;
+            color: var(--navy);
+            font-size: 11px;
             letter-spacing: 2px;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 28px;
         }
 
         .nav-links a {
             color: var(--navy);
             font-size: 13px;
-            font-weight: 500;
-            transition: .25s;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
+        .nav-links a:hover {
             color: var(--maroon);
         }
 
         .nav-links .contact-btn {
-            padding: 12px 21px;
             background: var(--maroon);
             color: white;
-            border-radius: 4px;
-        }
-
-        .nav-links .contact-btn:hover {
-            background: var(--navy);
-            color: white;
+            padding: 11px 20px;
+            border-radius: 5px;
         }
 
         .menu-toggle {
             display: none;
+            font-size: 25px;
             color: var(--maroon);
-            font-size: 24px;
             cursor: pointer;
             background: none;
             border: none;
@@ -146,263 +142,282 @@
         /* HERO SECTION */
 
         .hero {
-            min-height: 610px;
+            min-height: 590px;
             display: flex;
             align-items: center;
-            padding: 75px 8%;
-
+            color: white;
             background:
-                linear-gradient(
-                    90deg,
-                    rgba(15,25,42,.88) 0%,
-                    rgba(15,25,42,.65) 55%,
-                    rgba(15,25,42,.25) 100%
-                ),
-                url("./school-welcome.jpg") center 42% / cover no-repeat;
+                linear-gradient(rgba(23,38,62,0.78), rgba(100,27,50,0.75)),
+                url("./school-welcome.jpg") center/cover no-repeat;
         }
 
         .hero-content {
-            max-width: 650px;
-            color: white;
+            max-width: 720px;
+            padding: 90px 0;
         }
 
-        .hero-label {
-            display: inline-block;
-            margin-bottom: 20px;
+        .hero-content .small-heading {
             color: var(--gold);
-            font-size: 11px;
-            letter-spacing: 3px;
             font-weight: 700;
-            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            margin-bottom: 15px;
         }
 
         .hero h1 {
+            font-size: clamp(35px, 5vw, 58px);
+            line-height: 1.2;
             margin-bottom: 22px;
-            font-size: clamp(38px, 5vw, 63px);
-            line-height: 1.18;
-            font-weight: 700;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
+            font-weight: 800;
         }
 
         .hero p {
-            max-width: 520px;
+            font-size: 16px;
+            max-width: 620px;
             margin-bottom: 30px;
-            color: #f0f0f0;
-            font-size: 14px;
-            line-height: 1.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
+            color: #f1eeee;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 24px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            transition: .25s;
+            padding: 13px 25px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.3s;
+            margin: 5px 8px 5px 0;
         }
 
-        .btn-primary {
+        .btn-gold {
             background: var(--gold);
             color: var(--navy);
         }
 
-        .btn-primary:hover {
-            background: white;
-        }
-
         .btn-outline {
-            border: 1px solid white;
+            border: 2px solid white;
             color: white;
         }
 
-        .btn-outline:hover {
-            background: white;
-            color: var(--navy);
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* SECTION GENERAL */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading span {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .section-heading h2 {
+            color: var(--maroon);
+            font-size: 31px;
+            margin-top: 8px;
+        }
+
+        .section-heading p {
+            max-width: 650px;
+            margin: 10px auto 0;
+            color: #666;
+            font-size: 14px;
         }
 
         /* WELCOME SECTION */
 
         .welcome {
+            background: var(--light);
+        }
+
+        .welcome-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            gap: 55px;
             align-items: center;
-            gap: 65px;
-            padding: 95px 8%;
         }
 
         .welcome-image img {
-            display: block;
             width: 100%;
             height: 390px;
             object-fit: cover;
-            object-position: center 35%;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
-        .small-heading {
-            margin-bottom: 14px;
+        .welcome-text h2 {
             color: var(--maroon);
-            font-size: 11px;
-            letter-spacing: 3px;
-            font-weight: 700;
-        }
-
-        .welcome-content h2 {
+            font-size: 30px;
             margin-bottom: 18px;
-            font-size: 34px;
-            line-height: 1.4;
         }
 
-        .welcome-content p {
-            margin-bottom: 17px;
-            color: var(--text);
-            font-size: 13px;
-            line-height: 2;
+        .welcome-text p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 16px;
         }
 
-        .text-link {
-            color: var(--maroon);
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .text-link i {
-            margin-left: 7px;
+        .welcome-text .btn {
+            background: var(--maroon);
+            color: white;
+            margin-top: 10px;
         }
 
         /* HIGHLIGHTS */
 
         .highlights {
-            padding: 82px 8%;
-            background: var(--light);
-            text-align: center;
-        }
-
-        .section-heading {
-            max-width: 610px;
-            margin: 0 auto 42px;
-        }
-
-        .section-heading > span {
-            color: var(--maroon);
-            font-size: 11px;
-            letter-spacing: 3px;
-            font-weight: 700;
-        }
-
-        .section-heading h2 {
-            margin: 12px 0;
-            font-size: 32px;
-        }
-
-        .section-heading p {
-            color: var(--text);
-            font-size: 13px;
-            line-height: 1.8;
+            background: white;
         }
 
         .highlight-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+            gap: 25px;
         }
 
         .highlight-card {
-            padding: 36px 24px;
-            background: white;
-            border-radius: 5px;
-            transition: .25s;
+            background: var(--light);
+            padding: 30px 25px;
+            border-radius: 8px;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+            transition: 0.3s;
         }
 
         .highlight-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 28px rgba(0,0,0,.06);
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
 
         .highlight-card i {
+            font-size: 35px;
+            color: var(--maroon);
             margin-bottom: 18px;
-            color: var(--gold);
-            font-size: 30px;
         }
 
         .highlight-card h3 {
-            margin-bottom: 11px;
-            font-size: 16px;
+            color: var(--navy);
+            font-size: 17px;
+            margin-bottom: 12px;
         }
 
         .highlight-card p {
-            color: var(--text);
-            font-size: 12px;
-            line-height: 1.9;
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* PLAYGROUND */
+
+        .school-life {
+            background: var(--navy);
+            color: white;
+        }
+
+        .school-life-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .school-life h2 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .school-life p {
+            color: #e2e5eb;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .school-life img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
         /* ADMISSIONS */
 
         .admissions {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 28px;
-            padding: 75px 8%;
-            color: white;
-            background: var(--maroon);
+            background: var(--light);
+            text-align: center;
         }
 
         .admissions h2 {
-            margin-bottom: 10px;
-            font-size: 29px;
+            color: var(--maroon);
+            font-size: 32px;
+            margin-bottom: 15px;
         }
 
         .admissions p {
-            color: #eadde2;
-            font-size: 12px;
-            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            font-size: 14px;
+            color: #555;
         }
 
         .admissions .btn {
-            flex-shrink: 0;
-            background: var(--gold);
-            color: var(--navy);
-        }
-
-        .admissions .btn:hover {
-            background: white;
+            background: var(--maroon);
+            color: white;
         }
 
         /* FOOTER */
 
         footer {
-            padding: 52px 8% 20px;
+            background: #111c2d;
             color: white;
-            background: var(--navy);
+            padding: 55px 0 20px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1.4fr;
-            gap: 45px;
-            margin-bottom: 36px;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 35px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .footer-logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
         }
 
         footer h3 {
-            margin-bottom: 15px;
-            font-size: 16px;
+            color: var(--gold);
+            font-size: 17px;
+            margin-bottom: 18px;
         }
 
         footer p,
         footer a {
-            color: #c3cbd5;
-            font-size: 11px;
-            line-height: 2.2;
+            color: #d5d8df;
+            font-size: 13px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 10px;
         }
 
         footer a:hover {
@@ -410,21 +425,16 @@
         }
 
         .footer-bottom {
-            padding-top: 18px;
-            border-top: 1px solid rgba(255,255,255,.13);
-            color: #aeb8c6;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 20px;
             text-align: center;
-            font-size: 10px;
+            font-size: 12px;
+            color: #bfc4ce;
         }
 
-        /* RESPONSIVE DESIGN */
+        /* MOBILE */
 
-        @media (max-width: 850px) {
-
-            .navbar {
-                padding: 10px 5%;
-            }
-
+        @media(max-width: 850px) {
             .menu-toggle {
                 display: block;
             }
@@ -432,424 +442,422 @@
             .nav-links {
                 display: none;
                 position: absolute;
-                top: 100%;
+                top: 85px;
                 left: 0;
                 width: 100%;
-                padding: 24px;
-                flex-direction: column;
-                gap: 20px;
                 background: white;
-                box-shadow: 0 10px 20px rgba(0,0,0,.08);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 15px 5%;
+                box-shadow: 0 8px 15px rgba(0,0,0,0.08);
             }
 
-            .nav-links.show {
+            .nav-links.active {
                 display: flex;
             }
 
-            .hero {
-                min-height: 560px;
-                padding: 65px 6%;
-                background-position: center;
+            .nav-links a {
+                padding: 13px 0;
+                border-bottom: 1px solid #eee;
             }
 
-            .welcome {
+            .nav-links .contact-btn {
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .welcome-grid,
+            .school-life-grid {
                 grid-template-columns: 1fr;
-                gap: 32px;
-                padding: 70px 6%;
             }
 
             .highlight-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .admissions {
-                align-items: flex-start;
-                flex-direction: column;
-                padding: 62px 6%;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-        }
-
-        @media (max-width: 480px) {
-
-            .logo-text h2 {
-                font-size: 14px;
-            }
-
-            .school-logo {
-                width: 48px;
-                height: 48px;
+                grid-template-columns: 1fr 1fr;
             }
 
             .hero {
-                min-height: 540px;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .hero-buttons {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .welcome-content h2,
-            .section-heading h2 {
-                font-size: 27px;
-            }
-
-            .welcome-image img {
-                height: 280px;
-            }
-
-            .admissions h2 {
-                font-size: 25px;
+                min-height: 520px;
             }
         }
 
+        @media(max-width: 550px) {
+            .logo-area img {
+                width: 52px;
+                height: 52px;
+            }
+
+            .logo-text h2 {
+                font-size: 15px;
+            }
+
+            .logo-text span {
+                font-size: 9px;
+            }
+
+            .highlight-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero-content {
+                padding: 70px 0;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .welcome-image img,
+            .school-life img {
+                height: 270px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <!-- NAVIGATION -->
+    <header>
+        <div class="container navbar">
 
-    <header class="navbar">
+            <a href="./index.html" class="logo-area">
+                <img src="./logo.png"
+                     alt="RoyalStart Academy Logo"
+                     onerror="this.onerror=null;this.src='./logo.jpg.png';">
 
-        <a href="index.html" class="logo" aria-label="RoyalStart Academy home">
+                <div class="logo-text">
+                    <h2>RoyalStart Academy</h2>
+                    <span>LEARN • GROW • EXCEL</span>
+                </div>
+            </a>
 
-            <!-- SCHOOL LOGO -->
-            <img
-                src="./logo.png"
-                alt="RoyalStart Academy Logo"
-                class="school-logo"
-            >
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
 
-            <div class="logo-text">
-                <h2>RoyalStart Academy</h2>
-                <span>NOTHING BUT THE BEST</span>
-            </div>
+            <nav class="nav-links" id="navLinks">
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About Us</a>
+                <a href="./academics.html">Academics</a>
+                <a href="./contact.html">Contact Us</a>
+                <a href="./contact.html" class="contact-btn">Admissions</a>
+            </nav>
 
-        </a>
-
-        <nav class="nav-links" id="navLinks">
-
-            <a href="index.html" class="active">Home</a>
-
-            <a href="about.html">About Us</a>
-
-            <a href="academics.html">Academics</a>
-
-            <a href="contact.html" class="contact-btn">Contact Us</a>
-
-        </nav>
-
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-            aria-controls="navLinks"
-        >
-
-            <i class="fa-solid fa-bars"></i>
-
-        </button>
-
+        </div>
     </header>
 
-
-    <main>
-
-        <!-- HERO SECTION -->
-
-        <section class="hero">
-
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
             <div class="hero-content">
 
-                <span class="hero-label">
-                    Welcome to RoyalStart Academy
-                </span>
+                <div class="small-heading">WELCOME TO ROYALSTART ACADEMY</div>
 
-                <h1>
-                    Building Bright Futures,
-                    <span>One Learner at a Time.</span>
-                </h1>
+                <h1>Building Bright Futures Through Quality Education</h1>
 
                 <p>
-                    We nurture confident, creative and responsible learners through
-                    quality education, dedicated teaching and a supportive learning
-                    environment.
+                    At RoyalStart Academy, we nurture confident, creative
+                    and responsible learners through quality education,
+                    guidance and a supportive learning environment.
                 </p>
 
-                <div class="hero-buttons">
+                <a href="./about.html" class="btn btn-gold">
+                    Discover Our School
+                </a>
 
-                    <a href="about.html" class="btn btn-primary">
-                        Discover Our School
-                    </a>
-
-                    <a href="contact.html" class="btn btn-outline">
-                        Enrol Today
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- WELCOME SECTION -->
-
-        <section class="welcome">
-
-            <div class="welcome-image">
-
-                <img
-                    src="./school-welcome.jpg"
-                    alt="Learners of RoyalStart Academy in their school uniforms"
-                    loading="lazy"
-                >
-
-            </div>
-
-            <div class="welcome-content">
-
-                <div class="small-heading">
-                    WHO WE ARE
-                </div>
-
-                <h2>
-                    A Place Where Every Child Has the Opportunity to Shine.
-                </h2>
-
-                <p>
-                    At RoyalStart Academy, we believe every child has unique potential.
-                    Our commitment is to provide a nurturing and engaging environment
-                    where learners develop academically, socially and creatively.
-                </p>
-
-                <p>
-                    From early childhood education to junior school, we prepare our
-                    learners with the knowledge, confidence and skills needed for
-                    a brighter future.
-                </p>
-
-                <a href="about.html" class="text-link">
-                    Learn More About Us
-                    <i class="fa-solid fa-arrow-right"></i>
+                <a href="./contact.html" class="btn btn-outline">
+                    Enquire About Admission
                 </a>
 
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- WELCOME -->
+    <section class="welcome">
+        <div class="container">
 
+            <div class="welcome-grid">
 
-        <!-- SCHOOL HIGHLIGHTS -->
+                <div class="welcome-image">
+                    <img src="./school-welcome.jpg"
+                         alt="Welcome to RoyalStart Academy"
+                         loading="lazy">
+                </div>
 
-        <section class="highlights">
+                <div class="welcome-text">
 
-            <div class="section-heading">
+                    <div class="section-heading" style="text-align:left;margin-bottom:15px;">
+                        <span>WHO WE ARE</span>
+                    </div>
 
-                <span>WHY ROYALSTART</span>
+                    <h2>Welcome to RoyalStart Academy</h2>
 
-                <h2>Learning Beyond the Classroom</h2>
+                    <p>
+                        RoyalStart Academy is committed to providing
+                        quality education in a friendly, safe and
+                        supportive environment where every learner
+                        has an opportunity to grow.
+                    </p>
 
-                <p>
-                    We focus on developing well-rounded learners through education,
-                    creativity and practical experiences.
-                </p>
+                    <p>
+                        We believe that every child has unique abilities.
+                        Our approach focuses on academic excellence,
+                        creativity, discipline and the development of
+                        important life skills.
+                    </p>
+
+                    <p>
+                        We work together with parents and guardians
+                        to prepare learners for a brighter future.
+                    </p>
+
+                    <a href="./about.html" class="btn">
+                        Learn More About Us
+                    </a>
+
+                </div>
 
             </div>
+        </div>
+    </section>
 
+    <!-- HIGHLIGHTS -->
+    <section class="highlights">
+        <div class="container">
+
+            <div class="section-heading">
+                <span>WHY CHOOSE US</span>
+                <h2>Growing Together, Achieving More</h2>
+                <p>
+                    We provide an environment that encourages learners
+                    to discover their potential and achieve their goals.
+                </p>
+            </div>
 
             <div class="highlight-grid">
 
-                <article class="highlight-card">
-
-                    <i class="fa-solid fa-book-open"></i>
-
+                <div class="highlight-card">
+                    <i class="fas fa-graduation-cap"></i>
                     <h3>Quality Education</h3>
-
                     <p>
-                        Dedicated teachers and a supportive environment that encourages
-                        academic excellence.
+                        Supporting learners through effective teaching
+                        and a strong academic foundation.
                     </p>
+                </div>
 
-                </article>
-
-
-                <article class="highlight-card">
-
-                    <i class="fa-solid fa-laptop-code"></i>
-
-                    <h3>Digital Skills</h3>
-
+                <div class="highlight-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Computer & Coding</h3>
                     <p>
-                        Opportunities to explore computers, technology and coding
-                        from an early age.
+                        Encouraging digital skills, creativity and
+                        technology awareness.
                     </p>
+                </div>
 
-                </article>
+                <div class="highlight-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Supportive Environment</h3>
+                    <p>
+                        Creating a welcoming environment where learners
+                        feel valued and encouraged.
+                    </p>
+                </div>
 
+                <div class="highlight-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Creativity & Innovation</h3>
+                    <p>
+                        Helping learners develop curiosity,
+                        problem-solving and independent thinking.
+                    </p>
+                </div>
 
-                <article class="highlight-card">
+                <div class="highlight-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Dedicated Teaching</h3>
+                    <p>
+                        Encouraging learners through guidance,
+                        commitment and individual attention.
+                    </p>
+                </div>
 
-                    <i class="fa-solid fa-child-reaching"></i>
-
+                <div class="highlight-card">
+                    <i class="fas fa-seedling"></i>
                     <h3>Holistic Development</h3>
+                    <p>
+                        Developing responsible, confident and
+                        well-rounded young people.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHOOL LIFE -->
+    <section class="school-life">
+        <div class="container">
+
+            <div class="school-life-grid">
+
+                <div>
+                    <div class="section-heading" style="text-align:left;margin-bottom:15px;">
+                        <span>OUR LEARNING ENVIRONMENT</span>
+                    </div>
+
+                    <h2>A Place Where Every Child Can Thrive</h2>
 
                     <p>
-                        Encouraging creativity, confidence, discipline and essential
-                        life skills.
+                        At RoyalStart Academy, learning goes beyond
+                        the classroom. We encourage participation,
+                        discovery, creativity and positive relationships.
                     </p>
 
-                </article>
+                    <p>
+                        Our goal is to help every learner develop
+                        the confidence and skills needed to succeed
+                        in school and in life.
+                    </p>
+
+                    <a href="./academics.html" class="btn btn-gold">
+                        Explore Academics
+                    </a>
+                </div>
+
+                <div>
+                    <img src="./royalstartplayground.png"
+                         alt="RoyalStart Academy school playground"
+                         loading="lazy">
+                </div>
 
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- ADMISSIONS -->
+    <section class="admissions">
+        <div class="container">
 
-
-        <!-- ADMISSIONS SECTION -->
-
-        <section class="admissions">
-
-            <div>
-
-                <h2>Give Your Child a Bright Start.</h2>
-
-                <p>
-                    Admissions are open. Join the RoyalStart Academy family and
-                    begin your child's journey towards excellence.
-                </p>
-
+            <div class="section-heading">
+                <span>JOIN OUR SCHOOL COMMUNITY</span>
+                <h2>Admissions Are Open</h2>
             </div>
 
-            <a href="contact.html" class="btn">
+            <p>
+                Give your child an opportunity to learn, grow and
+                excel at RoyalStart Academy. We welcome enquiries
+                from parents and guardians interested in joining
+                our school community.
+            </p>
 
-                Enquire About Admissions
-                <i class="fa-solid fa-arrow-right"></i>
-
+            <a href="./contact.html" class="btn">
+                Contact Us Today
             </a>
 
-        </section>
-
-    </main>
-
+        </div>
+    </section>
 
     <!-- FOOTER -->
-
     <footer>
+        <div class="container">
 
-        <div class="footer-grid">
+            <div class="footer-grid">
 
-            <div>
+                <div>
+                    <div class="footer-logo">
+                        <img src="./logo.png"
+                             alt="RoyalStart Academy Logo"
+                             onerror="this.onerror=null;this.src='./logo.jpg.png';">
 
-                <h3>RoyalStart Academy</h3>
+                        <h3>RoyalStart Academy</h3>
+                    </div>
 
-                <p>
-                    Building bright futures through quality education, creativity
-                    and character development.
-                </p>
+                    <p>
+                        Learn • Grow • Excel. Nurturing confident,
+                        creative and responsible learners through
+                        quality education.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./academics.html">Academics</a></li>
+                        <li><a href="./contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Contact Information</h3>
+
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Kayole, Nairobi, Kenya
+                    </p>
+
+                    <p style="margin-top:12px;">
+                        <i class="fas fa-phone"></i>
+                        +254 729 043 916
+                    </p>
+
+                    <p style="margin-top:12px;">
+                        <i class="fas fa-envelope"></i>
+                        royalstartacademy@gmail.com
+                    </p>
+                </div>
 
             </div>
 
-
-            <div>
-
-                <h3>Quick Links</h3>
-
-                <p><a href="index.html">Home</a></p>
-
-                <p><a href="about.html">About Us</a></p>
-
-                <p><a href="academics.html">Academics</a></p>
-
-                <p><a href="contact.html">Contact</a></p>
-
-            </div>
-
-
-            <div>
-
-                <h3>Contact Us</h3>
-
-                <p>
-                    <i class="fa-solid fa-phone"></i>
-                    +254 729 043 916
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-envelope"></i>
-                    royalstartacademy@gmail.com
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-location-dot"></i>
-                    Kayole, Nairobi, Kenya
-                </p>
-
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> RoyalStart Academy.
+                All Rights Reserved.
             </div>
 
         </div>
-
-
-        <div class="footer-bottom">
-
-            © 2026 RoyalStart Academy. All Rights Reserved.
-
-        </div>
-
     </footer>
 
-
-    <!-- MOBILE MENU SCRIPT -->
-
+    <!-- JAVASCRIPT -->
     <script>
-
         const menuToggle = document.getElementById("menuToggle");
-
         const navLinks = document.getElementById("navLinks");
 
-        menuToggle.addEventListener("click", function() {
+        menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
 
-            const isOpen = navLinks.classList.toggle("show");
+            const isOpen = navLinks.classList.contains("active");
 
             menuToggle.setAttribute("aria-expanded", isOpen);
 
-            menuToggle.setAttribute(
-                "aria-label",
-                isOpen ? "Close navigation menu" : "Open navigation menu"
-            );
-
             menuToggle.innerHTML = isOpen
-                ? '<i class="fa-solid fa-xmark"></i>'
-                : '<i class="fa-solid fa-bars"></i>';
-
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
         });
 
-        // Close mobile menu after clicking a link
-
-        document.querySelectorAll(".nav-links a").forEach(function(link) {
-
-            link.addEventListener("click", function() {
-
-                navLinks.classList.remove("show");
-
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
                 menuToggle.setAttribute("aria-expanded", "false");
-
-                menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
             });
-
         });
 
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
     </script>
 
 </body>
